@@ -1,11 +1,12 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
 	"os"
 	"strconv"
 	"strings"
-	"database/sql"
+
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 	godotenv "github.com/joho/godotenv"
 )
@@ -28,6 +29,7 @@ var messagePubHandlerSub mqtt.MessageHandler = func(client mqtt.Client, msg mqtt
 	data = &Data{name: result[0], password: result[1], age: age, hours_spent: hours_spent_value}
 	Insert(db, *data)
 	fmt.Printf("name: "+data.name, "password: "+data.password, "age: "+strconv.Itoa(data.age), "hours_spent: "+strconv.Itoa(data.hours_spent))
+	Writer("./logs/subscriber_logs.txt", "name: "+data.name + " password: "+data.password + " age: "+strconv.Itoa(data.age) + " hours_spent: "+strconv.Itoa(data.hours_spent) + "\n")
 }
 
 var connectHandlerSub mqtt.OnConnectHandler = func(client mqtt.Client) {
@@ -39,17 +41,20 @@ var connectLostHandlerSub mqtt.ConnectionLostHandler = func(client mqtt.Client, 
 	Writer("subscriber_logs.txt",  text+ "\n")
 }
 
-func Subscriber(db *sql.DB) {
+func Subscriber(dbPointer *sql.DB) {
+	fmt.Println("Subscriber")
 	err := godotenv.Load(".env")
 	if err != nil {
 		fmt.Printf("Error loading .env file: %s", err)
 	}
-	db = SetPointer(db)
+	db = dbPointer
 
-	var broker = os.Getenv("BSetPointerROKER_ADDR")
+	var broker = os.Getenv("BROKER_ADDR")
 	var port = 8883
 	opts := mqtt.NewClientOptions()
-	opts.AddBroker(fmt.Sprintf("tls://%s%d/mqtt", broker, port))
+	var connectionString = fmt.Sprintf("tls://%s%d/mqtt", broker, port)
+	fmt.Println(connectionString)
+	opts.AddBroker(connectionString)
 	opts.SetClientID("Subscriber")
 	opts.SetUsername(os.Getenv("HIVE_USER"))
 	opts.SetPassword(os.Getenv("HIVE_PSWD"))
@@ -66,13 +71,6 @@ func Subscriber(db *sql.DB) {
 		fmt.Println(token.Error())
 		return
 	}
-
-	select {}
 }
 
-
-func SetPointer(dbPointer *sql.DB) *sql.DB{
-	
-	return dbPointer;
-}
 

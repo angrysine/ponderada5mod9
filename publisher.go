@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"math/rand/v2"
 	"os"
+	"strconv"
 	"time"
 
 	mqtt "github.com/eclipse/paho.mqtt.golang"
@@ -39,7 +41,11 @@ func Publisher() {
 	}
 
 	for {
-		text := "publicado: "+"Hello MQTT " + time.Now().Format(time.RFC3339)
+		name := "user" + strconv.Itoa(rand.IntN(100))
+		password := "password" + strconv.Itoa(rand.IntN(100))
+		age := rand.IntN(40)
+		hours_spent := rand.IntN(100)
+		text := name + "," + password + "," + strconv.Itoa(age) + "," + strconv.Itoa(hours_spent)
 		token := client.Publish("test/topic", 1, false, text)
 		token.Wait()
 		Writer("./logs/publisher_logs.txt", text + "\n")

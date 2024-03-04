@@ -12,9 +12,9 @@ import (
 
 func main() {
 	sqliteDatabase, _ := sql.Open("sqlite3", "./db.db")
-	Publisher()
+	go Publisher()
 	Subscriber(sqliteDatabase)
-
+	select {}
 }
 
 

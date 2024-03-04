@@ -1,0 +1,77 @@
+Recebido: user31,password10,11,64 do tópico: test/topic com QoS: 1
+
+
+Recebido: user74,password62,9,28 do tópico: test/topic com QoS: 1
+
+
+Recebido: user82,password58,28,35 do tópico: test/topic com QoS: 1
+
+
+Recebido: user23,password49,1,82 do tópico: test/topic com QoS: 1
+
+
+Recebido: user37,password13,3,65 do tópico: test/topic com QoS: 1
+
+
+name: user37 password: password13 age: 3 hours_spent: 65
+
+Recebido: user42,password55,35,6 do tópico: test/topic com QoS: 1
+
+
+name: user42 password: password55 age: 35 hours_spent: 6
+
+Recebido: user78,password33,9,68 do tópico: test/topic com QoS: 1
+
+
+name: user78 password: password33 age: 9 hours_spent: 68
+
+Recebido: user96,password40,24,85 do tópico: test/topic com QoS: 1
+
+
+name: user96 password: password40 age: 24 hours_spent: 85
+
+Recebido: user74,password52,3,96 do tópico: test/topic com QoS: 1
+
+
+name: user74 password: password52 age: 3 hours_spent: 96
+
+Recebido: user4,password80,25,27 do tópico: test/topic com QoS: 1
+
+
+name: user4 password: password80 age: 25 hours_spent: 27
+
+Recebido: user89,password51,1,19 do tópico: test/topic com QoS: 1
+
+
+name: user89 password: password51 age: 1 hours_spent: 19
+
+Recebido: user28,password41,36,38 do tópico: test/topic com QoS: 1
+
+
+name: user28 password: password41 age: 36 hours_spent: 38
+
+Recebido: user2,password19,28,35 do tópico: test/topic com QoS: 1
+
+
+name: user2 password: password19 age: 28 hours_spent: 35
+
+Recebido: user77,password88,37,46 do tópico: test/topic com QoS: 1
+
+
+name: user77 password: password88 age: 37 hours_spent: 46
+
+Recebido: user22,password50,10,16 do tópico: test/topic com QoS: 1
+
+
+name: user22 password: password50 age: 10 hours_spent: 16
+
+Recebido: user25,password44,25,17 do tópico: test/topic com QoS: 1
+
+
+name: user25 password: password44 age: 25 hours_spent: 17
+
+Recebido: user21,password58,11,21 do tópico: test/topic com QoS: 1
+
+
+name: user21 password: password58 age: 11 hours_spent: 21
+
