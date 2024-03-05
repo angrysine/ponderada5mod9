@@ -75,3 +75,15 @@ Recebido: user21,password58,11,21 do tópico: test/topic com QoS: 1
 
 name: user21 password: password58 age: 11 hours_spent: 21
 
+Recebido: user33,password65,22,67 do tópico: test/topic com QoS: 1
+
+
+Recebido: user89,password14,26,44 do tópico: test/topic com QoS: 1
+
+
+Recebido: user1,password97,36,51 do tópico: test/topic com QoS: 1
+
+
+Recebido: user74,password32,12,93 do tópico: test/topic com QoS: 1
+
+
